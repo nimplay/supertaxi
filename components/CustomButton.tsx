@@ -1,4 +1,3 @@
-import { TouchableOpacity, Text } from "react-native";
 import PreviousIconNavy from "../assets/images/icons/previous-back-arrow-left-arrows-navy.svg";
 import PreviousIconBrown from "../assets/images/icons/previous-back-arrow-left-arrows-Brown.svg";
 import PreviousIconGold from "../assets/images/icons/previous-back-arrow-left-arrows-gold.svg";
@@ -60,6 +59,9 @@ const defaultBgColors: Record<ColorVariant, string> = {
   sky: "bg-sky",
 };
 
+import { TouchableOpacity, Text, StyleSheet, Animated } from "react-native";
+import { useState, useRef } from "react";
+
 export default function CustomButton({
   onPress,
   title,
@@ -76,61 +78,71 @@ export default function CustomButton({
   const finalTextColor = textColor || defaultTextColors[variant];
   const finalBgColor = bgColor || defaultBgColors[variant];
 
+  const scaleAnim = useRef(new Animated.Value(1)).current;
+
+  const handlePressIn = () => {
+    Animated.spring(scaleAnim, {
+      toValue: 0.95,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const handlePressOut = () => {
+    Animated.spring(scaleAnim, {
+      toValue: 1,
+      useNativeDriver: true,
+    }).start();
+  };
+
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      className={`
-        ${finalBgColor}
-        rounded-full
-        px-8
-        w-fit
-        flex flex-row
-        items-center
-        justify-center
-        gap-3
-        py-4
-        // Efectos de profundidad
-        shadow-2xl
-        shadow-black/40
-        elevation-12
-        // Bordes y transiciones
-        border-2
-        border-white/20
-        transition-all
-        duration-300
-        // Efectos interactivos
-        active:scale-95
-        active:shadow-lg
-        active:border-white/30
-        hover:shadow-3xl
-        hover:translate-y-[-3px]
-        hover:border-white/30
-        // Gradiente sutil (si quieres agregar)
-        bg-gradient-to-r from-white/5 to-transparent
-      `}
-      activeOpacity={0.7}
-    >
-      {isIconLeft && LeftIconComponent && (
-        <LeftIconComponent
-          width={22}
-          height={22}
-          className="transition-all duration-300 hover:scale-110 hover:-translate-x-1"
-        />
-      )}
-
-      <Text
-        className={`text-xl ${font} ${finalTextColor} font-bold tracking-wide`}
+    <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+      <TouchableOpacity
+        onPress={onPress}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+        style={styles.button}
+        className={`
+          ${finalBgColor}
+          rounded-full
+          px-8
+          w-fit
+          flex flex-row
+          items-center
+          justify-center
+          gap-3
+          py-4
+          border-2
+          border-white/20
+        `}
+        activeOpacity={0.9}
       >
-        {title}
-      </Text>
+        {isIconLeft && LeftIconComponent && (
+          <LeftIconComponent width={22} height={22} />
+        )}
 
-      {isIconRight && RightIconComponent && (
-        <RightIconComponent
-          width={22}
-          height={22}
-          className="transition-all duration-300 hover:scale-110 hover:translate-x-1"
-        />
-      )}
-    </TouchableOpacity>
+        <Text
+          className={`text-xl ${font} ${finalTextColor} font-bold tracking-wide`}
+        >
+          {title}
+        </Text>
+
+        {isIconRight && RightIconComponent && (
+          <RightIconComponent width={22} height={22} />
+        )}
+      </TouchableOpacity>
+    </Animated.View>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+    elevation: 12,
+  },
+});
