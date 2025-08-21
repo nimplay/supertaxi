@@ -5,6 +5,7 @@ export const onBoardingArray = [
     description: "Experience the best taxi service at your fingertips.",
     image:
       "https://technical-challenge-nimplay.s3.us-east-2.amazonaws.com/SuperTaxi/good-looking-business-woman-texting-message-while-walking-street.jpg",
+    button: "Next",
   },
   {
     id: "2",
@@ -12,6 +13,7 @@ export const onBoardingArray = [
     description: "Get to your destination quickly and safely.",
     image:
       "https://technical-challenge-nimplay.s3.us-east-2.amazonaws.com/SuperTaxi/taxi-driver-waiting-her-client.jpg",
+    button: "Next",
   },
   {
     id: "3",
@@ -19,5 +21,6 @@ export const onBoardingArray = [
     description: "Enjoy competitive rates for all your rides.",
     image:
       "https://technical-challenge-nimplay.s3.us-east-2.amazonaws.com/SuperTaxi/yellow-black-sign-taxi-placed-top-car-night.jpg",
+    button: "Sign-in",
   },
 ];

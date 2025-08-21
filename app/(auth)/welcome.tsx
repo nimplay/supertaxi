@@ -1,3 +1,4 @@
+import CustomButton from "@/components/CustomButton";
 import { onBoardingArray } from "@/constants";
 import { router } from "expo-router";
 import { useRef, useState } from "react";
@@ -32,7 +33,7 @@ export default function WelcomeScreen() {
           height={height * 0.8}
         >
           {onBoardingArray.map((item) => (
-            <View key={item.id} className="flex-1 bg-navy">
+            <View key={item.id} className="flex-1 bg-navy items-center">
               <Image
                 source={{ uri: item.image }}
                 className="w-full h-96"
@@ -45,15 +46,14 @@ export default function WelcomeScreen() {
                 <Text className="text-xl font-tech text-gold text-center mb-6">
                   {item.description}
                 </Text>
-                <TouchableOpacity
-                  onPress={() => router.replace("/(auth)/sign-up")}
-                  className="bg-gold rounded-full px-8 py-3"
-                >
-                  <Text className="text-xl font-tech text-navy">
-                    Get Started
-                  </Text>
-                </TouchableOpacity>
               </View>
+              <CustomButton
+                onPress={() => console.log("Pressed")}
+                title={item.button}
+                isIconLeft={false}
+                isIconRight={true}
+                variant="gold"
+              />
             </View>
           ))}
         </Swiper>
