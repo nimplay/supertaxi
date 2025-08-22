@@ -53,7 +53,7 @@ export default function WelcomeScreen() {
       return {
         width: isActive ? 24 : 8,
         height: 8,
-        backgroundColor: isActive ? "#B8860B" : "#DAA520", // brown : gold
+        backgroundColor: isActive ? "#B8860B" : "#DAA520",
         marginHorizontal: 4,
         borderRadius: 4,
       };

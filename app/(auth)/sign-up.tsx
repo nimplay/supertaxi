@@ -20,7 +20,7 @@ export default function SignUpScreen() {
         />
       </View>
       <View className="flex-1 items-center justify-center bg-white">
-        <Text className="text-lg font-tech text-navy">
+        <Text className="text-3xl font-tech text-navy my-4">
           Please sign up to continue
         </Text>
         <View className="w-full px-4">
