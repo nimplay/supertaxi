@@ -20,11 +20,6 @@ export default function SignUpScreen() {
         />
       </View>
       <View className="flex-1 items-center justify-center bg-white">
-        {/*  <Image
-          source={require("../../assets/images/taxi.png")}
-          style={{ width: 100, height: 100 }}
-          resizeMode="contain"
-        /> */}
         <Text className="text-lg text-gray-600">
           Please sign up to continue
         </Text>
@@ -34,7 +29,7 @@ export default function SignUpScreen() {
             placeholder="Enter your name"
             value={form.name}
             onChangeText={(value) => setForm({ ...form, name: value })}
-            icon={require("../../assets/images/taxi.png")}
+            icon={require("../../assets/images/user.png")}
             secureTextEntry={false}
           />
           <InputField
@@ -42,7 +37,7 @@ export default function SignUpScreen() {
             placeholder="Enter your email"
             value={form.email}
             onChangeText={(value) => setForm({ ...form, email: value })}
-            icon={require("../../assets/images/taxi.png")}
+            icon={require("../../assets/images/email.png")}
             secureTextEntry={false}
           />
           <InputField
@@ -50,7 +45,7 @@ export default function SignUpScreen() {
             placeholder="Enter your password"
             value={form.password}
             onChangeText={(value) => setForm({ ...form, password: value })}
-            icon={require("../../assets/images/taxi.png")}
+            icon={require("../../assets/images/password.png")}
             secureTextEntry={true}
           />
         </View>
