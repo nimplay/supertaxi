@@ -1,3 +1,6 @@
+import { TouchableOpacity, Text, StyleSheet, Animated } from "react-native";
+import { useRef } from "react";
+
 import PreviousIconNavy from "../assets/images/icons/previous-back-arrow-left-arrows-navy.svg";
 import PreviousIconBrown from "../assets/images/icons/previous-back-arrow-left-arrows-Brown.svg";
 import PreviousIconGold from "../assets/images/icons/previous-back-arrow-left-arrows-gold.svg";
@@ -59,9 +62,6 @@ const defaultBgColors: Record<ColorVariant, string> = {
   sky: "bg-sky",
 };
 
-import { TouchableOpacity, Text, StyleSheet, Animated } from "react-native";
-import { useState, useRef } from "react";
-
 export default function CustomButton({
   onPress,
   title,
@@ -110,7 +110,6 @@ export default function CustomButton({
           items-center
           justify-center
           gap-3
-          py-4
           border-2
           border-white/20
         `}

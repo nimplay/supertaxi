@@ -36,7 +36,7 @@ export default function WelcomeScreen() {
 
   const handleButtonPress = () => {
     if (currentIndex === onBoardingArray.length - 1) {
-      router.replace("/(auth)/sign-in");
+      router.replace("/(auth)/sign-up");
     } else {
       const nextIndex = currentIndex + 1;
       scrollViewRef.current?.scrollTo({
