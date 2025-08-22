@@ -33,7 +33,7 @@ export default function InputField({
             <View>
               <Text>{label}</Text>
             </View>
-            <View className="flex flex-row gap-1 border py-2 border-gray-300">
+            <View className="flex flex-row items-center gap-1 border py-2 border-gray-300">
               <Image
                 source={icon}
                 className="ml-4"

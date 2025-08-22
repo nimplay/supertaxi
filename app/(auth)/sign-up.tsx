@@ -15,12 +15,12 @@ export default function SignUpScreen() {
           source={{
             uri: "https://technical-challenge-nimplay.s3.us-east-2.amazonaws.com/SuperTaxi/closeup-shot-taxi-sign-placed.jpg",
           }}
-          className="w-full h-80"
+          className="w-full h-72"
           resizeMode="cover"
         />
       </View>
       <View className="flex-1 items-center justify-center bg-white">
-        <Text className="text-lg text-gray-600">
+        <Text className="text-lg font-tech text-navy">
           Please sign up to continue
         </Text>
         <View className="w-full px-4">

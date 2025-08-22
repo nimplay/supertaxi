@@ -18,7 +18,7 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 export default function WelcomeScreen() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -63,10 +63,11 @@ export default function WelcomeScreen() {
   };
 
   return (
-    <View className="flex-1 bg-navy pb-12">
+    <View className="flex-1 bg-navy pb-16">
+      <View className="h-10 bg-black w-full" />
       <TouchableOpacity
         onPress={() => router.replace("/(auth)/sign-in")}
-        className="absolute top-12 right-8 z-10 bg-navy/80 px-4 py-2 rounded-full active:bg-navy-light/50"
+        className="absolute top-16 right-8 z-10 bg-navy/80 px-4 py-2 rounded-full active:bg-navy-light/50"
       >
         <Text className="text-xm font-bold text-gold active:text-gold-light">
           skip &gt;&gt;
