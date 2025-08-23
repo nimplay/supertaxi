@@ -5,12 +5,10 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { View, Text, Image, ScrollView } from "react-native";
 
-export default function SignUpScreen() {
+export default function SignInScreen() {
   const [form, setForm] = useState({
-    name: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   const handleSignIn = async () => {
