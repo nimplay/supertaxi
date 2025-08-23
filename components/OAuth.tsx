@@ -12,7 +12,7 @@ export default function OAuth() {
         <Text className="text-navy text-center">Or</Text>
         <View className="flex1 w-full h-[1px] bg-navy " />
       </View>
-      <View className="flex-1 items-center mb-8">
+      <View className="flex-1 items-center mb-8 mt-2">
         <CustomButton
           onPress={handleGoogleSignIn}
           title={"Log In with Google"}
