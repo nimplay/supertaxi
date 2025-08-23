@@ -66,7 +66,7 @@ export default function WelcomeScreen() {
     <View className="flex-1 bg-navy pb-16">
       <View className="h-10 bg-black w-full" />
       <TouchableOpacity
-        onPress={() => router.replace("/(auth)/sign-in")}
+        onPress={() => router.replace("/(auth)/sign-up")}
         className="absolute top-16 right-8 z-10 bg-navy/80 px-4 py-2 rounded-full active:bg-navy-light/50"
       >
         <Text className="text-xm font-bold text-gold active:text-gold-light">

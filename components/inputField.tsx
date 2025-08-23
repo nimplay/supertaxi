@@ -39,7 +39,13 @@ export default function InputField({
                 className="ml-4"
                 style={{ width: 20, height: 20 }}
               />
-              <TextInput placeholder={placeholder} />
+              <TextInput
+                placeholder={placeholder}
+                secureTextEntry={secureTextEntry}
+                onChangeText={onChangeText}
+                value={value}
+                className="flex-1 ml-2"
+              />
             </View>
           </View>
         </TouchableWithoutFeedback>

@@ -1,13 +1,21 @@
+import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/inputField";
+import { router } from "expo-router";
 import { useState } from "react";
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
 
 export default function SignUpScreen() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
+
+  const handleSignUp = () => {
+    console.log("Sign Up", form);
+  };
+
   return (
     <ScrollView className="flex-1 bg-white">
       <View className="flex-1 items-center justify-center bg-white">
@@ -21,7 +29,7 @@ export default function SignUpScreen() {
       </View>
       <View className="flex-1 items-center justify-center bg-white">
         <Text className="text-3xl font-tech text-navy my-4">
-          Please sign up to continue
+          Create Account
         </Text>
         <View className="w-full px-4">
           <InputField
@@ -48,6 +56,36 @@ export default function SignUpScreen() {
             icon={require("../../assets/images/password.png")}
             secureTextEntry={true}
           />
+          <InputField
+            label="Password"
+            placeholder="Confirm your password"
+            value={form.confirmPassword}
+            onChangeText={(value) =>
+              setForm({ ...form, confirmPassword: value })
+            }
+            icon={require("../../assets/images/password.png")}
+            secureTextEntry={true}
+          />
+          <View className="w-full px-4 mt-4 flex-1 items-center">
+            <CustomButton
+              onPress={handleSignUp}
+              title={"Sign Up"}
+              isIconLeft={false}
+              isIconRight={true}
+              variant="navy"
+            />
+          </View>
+        </View>
+        <View className="mt-4">
+          <Text className="text-gray-600">
+            Already have an account?{" "}
+            <TouchableOpacity
+              className="text-navy font-tech"
+              onPress={() => router.replace("/(auth)/sign-in")}
+            >
+              Sign In
+            </TouchableOpacity>
+          </Text>
         </View>
       </View>
     </ScrollView>
