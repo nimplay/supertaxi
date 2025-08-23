@@ -1,7 +1,7 @@
 import {
   KeyboardAvoidingView,
   TextInput,
-  TouchableWithoutFeedback,
+  Pressable,
   View,
   Text,
   Image,
@@ -28,7 +28,7 @@ export default function InputField({
   return (
     <View className="mb-4">
       <KeyboardAvoidingView behavior="padding">
-        <TouchableWithoutFeedback>
+        <Pressable>
           <View>
             <View>
               <Text>{label}</Text>
@@ -48,7 +48,7 @@ export default function InputField({
               />
             </View>
           </View>
-        </TouchableWithoutFeedback>
+        </Pressable>
       </KeyboardAvoidingView>
     </View>
   );

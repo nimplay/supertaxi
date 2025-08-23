@@ -12,7 +12,7 @@ export default function SignUpScreen() {
     confirmPassword: "",
   });
 
-  const handleSignUp = () => {
+  const handleSignUp = async () => {
     console.log("Sign Up", form);
   };
 
@@ -76,15 +76,15 @@ export default function SignUpScreen() {
             />
           </View>
         </View>
-        <View className="mt-4">
+        <View className="mt-8">
           <Text className="text-gray-600">
             Already have an account?{" "}
-            <TouchableOpacity
+            <Text
               className="text-navy font-tech"
               onPress={() => router.replace("/(auth)/sign-in")}
             >
               Sign In
-            </TouchableOpacity>
+            </Text>
           </Text>
         </View>
       </View>
