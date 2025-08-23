@@ -13,7 +13,7 @@ import NextIconOrange from "../assets/images/icons/next-forward-arrow-arrows-ora
 import NextIconSky from "../assets/images/icons/next-forward-arrow-arrows-sky.svg";
 
 // Tipo para las variantes de color
-type ColorVariant = "navy" | "brown" | "gold" | "orange" | "sky";
+type ColorVariant = "navy" | "brown" | "gold" | "orange" | "sky" | "google";
 
 interface CustomButtonProps {
   onPress: () => void;
@@ -33,6 +33,7 @@ const leftIcons: Record<ColorVariant, any> = {
   brown: PreviousIconGold,
   navy: PreviousIconOrange,
   orange: PreviousIconSky,
+  google: PreviousIconSky,
 };
 
 // Mapeo de iconos derechos por variante
@@ -42,15 +43,17 @@ const rightIcons: Record<ColorVariant, any> = {
   brown: NextIconGold,
   navy: NextIconOrange,
   orange: NextIconSky,
+  google: NextIconSky,
 };
 
 // Mapeo de colores de texto por variante (puedes personalizar)
 const defaultTextColors: Record<ColorVariant, string> = {
-  navy: "text-orange",
+  navy: "text-gold",
   brown: "text-gold",
   gold: "text-navy",
   orange: "text-sky",
   sky: "text-brown",
+  google: "text-black",
 };
 
 // Mapeo de colores de fondo por variante
@@ -60,6 +63,7 @@ const defaultBgColors: Record<ColorVariant, string> = {
   gold: "bg-gold",
   orange: "bg-orange",
   sky: "bg-sky",
+  google: "bg-transparent",
 };
 
 export default function CustomButton({
@@ -119,9 +123,7 @@ export default function CustomButton({
           <LeftIconComponent width={22} height={22} />
         )}
 
-        <Text
-          className={`text-xl ${font} ${finalTextColor} font-bold tracking-wide`}
-        >
+        <Text className={`text-xl ${font} ${finalTextColor} tracking-wide`}>
           {title}
         </Text>
 

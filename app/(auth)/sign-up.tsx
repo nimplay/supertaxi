@@ -1,8 +1,9 @@
 import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/inputField";
+import OAuth from "@/components/OAuth";
 import { router } from "expo-router";
 import { useState } from "react";
-import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, Image, ScrollView } from "react-native";
 
 export default function SignUpScreen() {
   const [form, setForm] = useState({
@@ -71,12 +72,13 @@ export default function SignUpScreen() {
               onPress={handleSignUp}
               title={"Sign Up"}
               isIconLeft={false}
-              isIconRight={true}
+              isIconRight={false}
               variant="navy"
             />
           </View>
         </View>
-        <View className="mt-8">
+        <OAuth />
+        <View className="pb-8">
           <Text className="text-gray-600">
             Already have an account?{" "}
             <Text
