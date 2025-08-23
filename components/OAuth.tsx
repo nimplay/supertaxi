@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import CustomButton from "./CustomButton";
 
 export default function OAuth() {
-  const handleGoogleSignUp = async () => {
+  const handleGoogleSignIn = async () => {
     console.log("Google Sign Up");
   };
   return (
@@ -14,8 +14,8 @@ export default function OAuth() {
       </View>
       <View className="flex-1 items-center mb-8">
         <CustomButton
-          onPress={handleGoogleSignUp}
-          title={"Log in with Google"}
+          onPress={handleGoogleSignIn}
+          title={"Log In with Google"}
           isIconLeft={true}
           isIconRight={false}
           variant="google"
