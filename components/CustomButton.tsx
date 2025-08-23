@@ -11,6 +11,7 @@ import NextIconBrown from "../assets/images/icons/next-forward-arrow-arrows-Brow
 import NextIconGold from "../assets/images/icons/next-forward-arrow-arrows-gold.svg";
 import NextIconOrange from "../assets/images/icons/next-forward-arrow-arrows-orange.svg";
 import NextIconSky from "../assets/images/icons/next-forward-arrow-arrows-sky.svg";
+import GoogleIcon from "../assets/images/icons/google.svg";
 
 // Tipo para las variantes de color
 type ColorVariant = "navy" | "brown" | "gold" | "orange" | "sky" | "google";
@@ -33,7 +34,7 @@ const leftIcons: Record<ColorVariant, any> = {
   brown: PreviousIconGold,
   navy: PreviousIconOrange,
   orange: PreviousIconSky,
-  google: PreviousIconSky,
+  google: GoogleIcon,
 };
 
 // Mapeo de iconos derechos por variante
@@ -43,7 +44,7 @@ const rightIcons: Record<ColorVariant, any> = {
   brown: NextIconGold,
   navy: NextIconOrange,
   orange: NextIconSky,
-  google: NextIconSky,
+  google: GoogleIcon,
 };
 
 // Mapeo de colores de texto por variante (puedes personalizar)
